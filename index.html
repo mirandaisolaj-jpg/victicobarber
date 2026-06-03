@@ -1,12 +1,281 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VicticoBarber</title>
-    <link rel="stylesheet" href="style.css">
+    <title>VicticoBarber | Control Total Premium</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
+    <!-- CONTROLADOR DE PESTAÑAS (CSS PURO) -->
+    <input type="radio" name="nav-tabs" id="tab-trabajos" checked hidden>
+    <input type="radio" name="nav-tabs" id="tab-precios" hidden>
+    <input type="radio" name="nav-tabs" id="tab-usuarios" hidden>
+    <input type="radio" name="nav-tabs" id="tab-logros" hidden>
+    <input type="radio" name="nav-tabs" id="tab-promos" hidden>
+    <input type="radio" name="nav-tabs" id="tab-stats" hidden>
+    <input type="radio" name="nav-tabs" id="tab-comentarios" hidden>
+    <input type="radio" name="nav-tabs" id="tab-turnos" hidden>
+
+    <!-- Encabezado y Menú de Navegación -->
+    <header class="main-header">
+        <div class="logo">💈 VicticoBarber</div>
+        <nav class="nav-menu">
+            <label for="tab-trabajos" class="nav-btn">Trabajos</label>
+            <label for="tab-precios" class="nav-btn">Precios</label>
+            <label for="tab-usuarios" class="nav-btn">Usuarios</label>
+            <label for="tab-logros" class="nav-btn">Logros</label>
+            <label for="tab-promos" class="nav-btn">Sorteos</label>
+            <label for="tab-stats" class="nav-btn">Estadísticas</label>
+            <label for="tab-comentarios" class="nav-btn">Comentarios</label>
+            <label for="tab-turnos" class="nav-btn">Turnos Citas</label>
+        </nav>
+    </header>
+
+    <!-- Contenedor Principal de Contenidos -->
+    <main class="container">
+
+        <!-- PESTAÑA 1: TRABAJOS DIARIOS -->
+        <section class="content-section" id="content-trabajos">
+            <h2 class="section-title">🔥 Galería de Trabajos Diarios</h2>
+            <div class="feed-grid">
+                
+                <!-- Trabajo 1 -->
+                <article class="post-card">
+                    <div class="image-zoom-container">
+                        <img src="corte1.jpg" alt="Corte de Estilo Premium" class="post-image-real">
+                    </div>
+                    <div class="post-content">
+                        <h3>Corte de Estilo Premium</h3>
+                        <div class="reactions">
+                            <label class="react-btn"><input type="checkbox"> ❤️ <span>12</span></label>
+                            <label class="react-btn"><input type="checkbox"> 🔥 <span>45</span></label>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Trabajo 2 -->
+                <article class="post-card">
+                    <div class="image-zoom-container">
+                        <img src="corte2.jpg" alt="Diseño de Barba Premium" class="post-image-real">
+                    </div>
+                    <div class="post-content">
+                        <h3>Diseño de Barba Premium</h3>
+                        <div class="reactions">
+                            <label class="react-btn"><input type="checkbox"> ❤️ <span>19</span></label>
+                            <label class="react-btn"><input type="checkbox"> 🔥 <span>31</span></label>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- PESTAÑA 2: PRECIOS Y SERVICIOS -->
+        <section class="content-section" id="content-precios">
+            <h2 class="section-title">💰 Lista de Precios y Servicios</h2>
+            <div class="precios-box">
+                <ul class="precios-list">
+                    <li><span>Cortes de estilo</span> <strong>$500</strong></li>
+                    <li><span>Corte de estilo para niños</span> <strong>$400</strong></li>
+                    <li><span>Corte clásico (sin el 0)</span> <strong>$350</strong></li>
+                    <li><span>Un número parejo con los cortes</span> <strong>$150</strong></li>
+                    <li><span>Rasurado al cero todo el cráneo</span> <strong>$100</strong></li>
+                    <li><span>Arreglo de barba</span> <strong>$100</strong></li>
+                    <li><span>Bigote y barbilla</span> <strong>$100</strong></li>
+                    <li><span>Rasurado del vello facial y afeitado</span> <strong>$150</strong></li>
+                    <li><span>Diseños pequeños</span> <strong>$50</strong></li>
+                    <li><span>Diseños grandes</span> <strong>$100</strong></li>
+                    <li><span>Solo arreglo de cejas</span> <strong>$50</strong></li>
+                </ul>
+                
+                <div class="precios-notas">
+                    <p class="nota-item">✨ <strong>Nota importante:</strong> El arreglo de cejas va incluido en el costo del pelado.</p>
+                    <p class="nota-item">📅 <strong>Turno reservado:</strong> Reservar con antelación. En caso de que no puedan llegar a la hora del turno que reserve, avisarme para que alguien más lo reserve si así lo desea. <strong>$50</strong> <em>&lt;&lt; Solo 5 turnos por día &gt;&gt;</em></p>
+                    <p class="nota-item">🚗 <strong>Servicio a domicilio:</strong> Dentro de la ciudad <strong>$800</strong> (si es fuera de la ciudad varía +)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 3: REGISTRO DE USUARIOS -->
+        <section class="content-section" id="content-usuarios">
+            <h2 class="section-title">👥 Registro y Comunidad</h2>
+            <div class="user-container">
+                <form class="custom-form" onsubmit="return false;">
+                    <h3>Crea tu Cuenta de Cliente</h3>
+                    <input type="text" placeholder="Nombre Completo" required>
+                    <input type="tel" placeholder="Número de Teléfono" required>
+                    <input type="email" placeholder="Correo Electrónico" required>
+                    <input type="password" placeholder="Contraseña de Seguridad" required>
+                    <button type="button" class="btn-primary">Registrarse</button>
+                </form>
+
+                <div class="user-list-box">
+                    <h3>Lista de Usuarios Registrados Mundialmente</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Teléfono</th>
+                                <th>Correo</th>
+                                <th>Contraseña</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Carlos Mendoza</td>
+                                <td>+53 51234567</td>
+                                <td>carlos@email.com</td>
+                                <td><code>car123*</code></td>
+                            </tr>
+                            <tr>
+                                <td>Alejandro Gómez</td>
+                                <td>+34 611223344</td>
+                                <td>ale_barber@email.com</td>
+                                <td><code>ale9932</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 4: LOGROS -->
+        <section class="content-section" id="content-logros">
+            <h2 class="section-title">🏆 Logros de Nuestra Barbería</h2>
+            <div class="grid-3-columns">
+                <div class="card-item border-gold">
+                    <span class="card-icon">🥇</span>
+                    <h3>Máster de Estilo</h3>
+                    <p>Primer lugar en la competencia de estilismo y cortes modernos del año.</p>
+                </div>
+                <div class="card-item border-gold">
+                    <span class="card-icon">🌍</span>
+                    <h3>Certificación Global</h3>
+                    <p>Acreditados internacionalmente para atender tendencias de cualquier país.</p>
+                </div>
+                <div class="card-item border-gold">
+                    <span class="card-icon">⭐</span>
+                    <h3>+76 Clientes</h3>
+                    <p>Garantía de satisfacción y fidelidad total en nuestra comunidad en expansión.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 5: SORTEOS Y PROMOCIONES -->
+        <section class="content-section" id="content-promos">
+            <h2 class="section-title">🎉 Sorteos y Promociones Activas</h2>
+            <div class="promo-banner">
+                <span class="badge-live">¡SORTEO MUNDIAL EN VIVO!</span>
+                <h3>Gana un Combo Completo: Corte, Barba y Mascarilla</h3>
+                <p>Para participar, regístrate en la pestaña de usuarios y reserva tu turno esta semana.</p>
+                <div class="promo-info">Válido hasta el último día del mes actual.</div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 6: ESTADÍSTICAS Y MENCIONES -->
+        <section class="content-section" id="content-stats">
+            <h2 class="section-title">📊 Estadísticas de la Página</h2>
+            <div class="grid-2-columns">
+                <div class="card-item">
+                    <h3>Crecimiento Mensual</h3>
+                    <div class="stat-number">+</div>
+                    <p>Nuevos seguidores registrados a nivel internacional.</p>
+                </div>
+                <div class="card-item">
+                    <h3>Menciones Especiales & Saludos</h3>
+                    <div class="shoutout-box">
+                        <p>👋 Saludo especial para <strong>Roberto Suárez</strong> por su fidelidad constante.</p>
+                        <p>🔥 Mención honorífica a <strong>@BarberWorld</strong> por el apoyo en redes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 7: COMENTARIOS -->
+        <section class="content-section" id="content-comentarios">
+            <h2 class="section-title">💬 Muro de Comentarios Globales</h2>
+            <div class="comments-box">
+                <div class="comment-item">
+                    <p><strong>@juan_cortes:</strong> El mejor servicio, super recomendado el degradado que me hicieron.</p>
+                </div>
+                <div class="comment-item">
+                    <p><strong>@estilo_urbano:</strong> Una excelente atención, el ambiente es de otro nivel.</p>
+                </div>
+                <div class="comment-form">
+                    <textarea placeholder="Deja tu opinión pública aquí..." disabled></textarea>
+                    <button type="button" class="btn-primary">Publicar Comentario</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 8: TURNOS DISPONIBLES -->
+        <section class="content-section" id="content-turnos">
+            <h2 class="section-title">📅 Agenda de Turnos Disponibles</h2>
+            <p class="subtitle-info">Selecciona tu horario de atención. Los turnos marcados en rojo ya han sido ocupados.</p>
+            
+            <div class="turnos-layout">
+                <div class="turnos-grid">
+                    <label class="turno-card">
+                        <input type="checkbox" id="t-9">
+                        <span class="time">09:00 AM</span>
+                        <span class="status-label">Disponible</span>
+                    </label>
+                    <label class="turno-card">
+                        <input type="checkbox" id="t-10">
+                        <span class="time">10:00 AM</span>
+                        <span class="status-label">Disponible</span>
+                    </label>
+                    <label class="turno-card ocupado">
+                        <span class="time">11:00 AM</span>
+                        <span class="status-label">Ocupado</span>
+                    </label>
+                    <label class="turno-card">
+                        <input type="checkbox" id="t-12">
+                        <span class="time">12:00 PM</span>
+                        <span class="status-label">Disponible</span>
+                    </label>
+                    <label class="turno-card">
+                        <input type="checkbox" id="t-13">
+                        <span class="time">01:00 PM</span>
+                        <span class="status-label">Disponible</span>
+                    </label>
+                    <label class="turno-card">
+                        <input type="checkbox" id="t-14">
+                        <span class="time">02:00 PM</span>
+                        <span class="status-label">Disponible</span>
+                    </label>
+                    <label class="turno-card ocupado">
+                        <span class="time">03:00 PM</span>
+                        <span class="status-label">Ocupado</span>
+                    </label>
+                    <label class="turno-card">
+                        <input type="checkbox" id="t-16">
+                        <span class="time">04:00 PM</span>
+                        <span class="status-label">Disponible</span>
+                    </label>
+                    <label class="turno-card">
+                        <input type="checkbox" id="t-17">
+                        <span class="time">05:00 PM</span>
+                        <span class="status-label">Disponible</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Botón Flotante Fijo de WhatsApp -->
+    <a href="https://wa.me/5359651766?text=Hola,%20vengo%20de%20la%20página%20web%20y%20quiero%20confirmar%20un%20turno" class="whatsapp-fixed-btn" target="_blank" rel="noopener noreferrer">
+        <span class="wp-icon">💬</span> WhatsApp: +53 59651766
+    </a>
+
+    <!-- Pie de Página Fijo con Frase Motivacional -->
+    <footer class="main-footer">
+        <p>&copy; 2026 VicticoBarber. Accesibilidad e Inclusión Global Garantizada.</p>
+        <p class="motivational-quote">"El éxito no llega por casualidad, se esculpe día a día con disciplina, pasión y el corte perfecto. Mantén tu estilo en lo más alto."</p>
+    </footer>
+
 </body>
 </html>
