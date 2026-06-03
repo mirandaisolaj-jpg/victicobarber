@@ -3,306 +3,395 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbería Profesional - Acceso Real</title>
+    <title>Barbería Profesional</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="pantalla-registro" class="auth-overlay">
-        <div class="auth-card">
-            <div class="auth-logo">💈 Barber Shop 💈</div>
-            <h2>Crear Cuenta de Cliente</h2>
-            <p>Regístrate con tus datos reales. Se guardarán en la base de datos local para que puedas interactuar en la web.</p>
-            
-            <form id="registro-form" class="form-simulado">
-                <div class="input-group">
-                    <label>Número de Teléfono</label>
-                    <input type="tel" id="reg-telefono" placeholder="+53 XXXXXXXX" required>
-                </div>
-                <div class="input-group">
-                    <label>Correo Electrónico</label>
-                    <input type="email" id="reg-correo" placeholder="nombre@correo.com" required>
-                </div>
-                <div class="input-group">
-                    <label>Contraseña</label>
-                    <input type="password" id="reg-pass" placeholder="••••••••" required>
-                </div>
-                
-                <button type="submit" class="btn-acceder">Registrarse y Entrar</button>
-            </form>
-        </div>
-    </div>
+    <header class="header">
+        <div class="logo">Barber Shop</div>
+        <nav class="nav">
+            <a href="#trabajos">Trabajos</a>
+            <a href="#precios">Precios</a>
+            <a href="#turnos">Turnos</a>
+            <a href="#comentarios">Comentarios</a>
+            <a href="#sorteos">Sorteos y Promos</a>
+            <a href="#logros">Logros</a>
+            <a href="#usuarios">Usuarios</a>
+            <a href="#estadisticas">Estadísticas</a>
+        </nav>
+    </header>
 
-
-    <div id="contenido-sistema" class="contenido-web">
+    <main class="main-container">
         
-        <header class="header">
-            <div class="logo">Barber Shop</div>
-            <nav class="nav">
-                <a href="#trabajos">Trabajos</a>
-                <a href="#precios">Precios</a>
-                <a href="#turnos">Turnos</a>
-                <a href="#comentarios">Comentarios</a>
-                <a href="#sorteos">Sorteos y Promos</a>
-                <a href="#logros">Logros</a>
-                <a href="#usuarios">Usuarios</a>
-                <a href="#estadisticas">Estadísticas</a>
-                <button id="btn-cerrar-sesion" class="btn-salir">Cerrar Sesión</button>
-            </nav>
-        </header>
+        <section id="inicio" class="section-card inicio-welcome">
+            <h2>¡Bienvenido a nuestra Barbería!</h2>
+            <p>Disfruta de la experiencia completa. Selecciona una opción en el menú de arriba para reservar tu turno, ver nuestros precios o revisar nuestros últimos trabajos.</p>
+            <div class="logo-grande">💈✂️👑</div>
+        </section>
 
-        <main class="main-container">
+        <section id="trabajos" class="section-card tab-content">
+            <h2>Nuestros Trabajos Diarios</h2>
+            <p>Explora nuestra galería de estilos frescos. ¡Dale un toque de fuego a tu favorito!</p>
             
-            <section id="inicio" class="section-card inicio-welcome">
-                <h2>¡Cuenta Creada Exitosamente!</h2>
-                <p>Tus datos han sido almacenados de forma segura en la base de datos del navegador.</p>
-                <p>Usa el menú superior para navegar por las diferentes secciones de la barbería.</p>
-                <div class="logo-grande">✂️💈👑</div>
-            </section>
-
-            <section id="trabajos" class="section-card tab-content">
-                <h2>Nuestros Trabajos Diarios</h2>
-                <p>Mira los cortes del día. ¡Deja tu reacción y comentario abajo!</p>
-                
-                <div class="galeria">
-                    <div class="trabajo-post">
-                        <img src="corte1.jpg" alt="Corte de estilo 1">
-                        <div class="post-actions">
-                            <button class="btn-react">🔥 Me gusta</button>
-                            <button class="btn-react">✂️ Increíble</button>
-                        </div>
-                    </div>
-                    
-                    <div class="trabajo-post">
-                        <img src="corte2.jpg" alt="Corte de estilo 2">
-                        <div class="post-actions">
-                            <button class="btn-react">🔥 Me gusta</button>
-                            <button class="btn-react">✂️ Increíble</button>
-                        </div>
+            <div class="galeria">
+                <div class="trabajo-post">
+                    <img src="corte3.jpg" alt="Estilo de corte 3">
+                    <div class="post-actions">
+                        <button class="btn-react" onclick="alert('¡Gracias por tu reacción! 🔥')">🔥 Me gusta</button>
+                        <button class="btn-react" onclick="alert('¡Gracias por tu apoyo! ✂️')">✂️ Increíble</button>
                     </div>
                 </div>
-            </section>
+                <div class="trabajo-post">
+                    <img src="corte4.jpg" alt="Estilo de corte 4">
+                    <div class="post-actions">
+                        <button class="btn-react" onclick="alert('¡Gracias por tu reacción! 🔥')">🔥 Me gusta</button>
+                        <button class="btn-react" onclick="alert('¡Gracias por tu apoyo! ✂️')">✂️ Increíble</button>
+                    </div>
+                </div>
+                <div class="trabajo-post">
+                    <img src="corte5.jpg" alt="Estilo de corte 5">
+                    <div class="post-actions">
+                        <button class="btn-react" onclick="alert('¡Gracias por tu reacción! 🔥')">🔥 Me gusta</button>
+                        <button class="btn-react" onclick="alert('¡Gracias por tu apoyo! ✂️')">✂️ Increíble</button>
+                    </div>
+                </div>
+                <div class="trabajo-post">
+                    <img src="corte6.jpg" alt="Estilo de corte 6">
+                    <div class="post-actions">
+                        <button class="btn-react" onclick="alert('¡Gracias por tu reacción! 🔥')">🔥 Me gusta</button>
+                        <button class="btn-react" onclick="alert('¡Gracias por tu apoyo! ✂️')">✂️ Increíble</button>
+                    </div>
+                </div>
+                <div class="trabajo-post">
+                    <img src="corte7.jpg" alt="Estilo de corte 7">
+                    <div class="post-actions">
+                        <button class="btn-react" onclick="alert('¡Gracias por tu reacción! 🔥')">🔥 Me gusta</button>
+                        <button class="btn-react" onclick="alert('¡Gracias por tu apoyo! ✂️')">✂️ Increíble</button>
+                    </div>
+                </div>
+                <div class="trabajo-post">
+                    <img src="corte8.jpg" alt="Estilo de corte 8">
+                    <div class="post-actions">
+                        <button class="btn-react" onclick="alert('¡Gracias por tu reacción! 🔥')">🔥 Me gusta</button>
+                        <button class="btn-react" onclick="alert('¡Gracias por tu apoyo! ✂️')">✂️ Increíble</button>
+                    </div>
+                </div>
+                <div class="trabajo-post">
+                    <img src="corte9.jpg" alt="Estilo de corte 9">
+                    <div class="post-actions">
+                        <button class="btn-react" onclick="alert('¡Gracias por tu reacción! 🔥')">🔥 Me gusta</button>
+                        <button class="btn-react" onclick="alert('¡Gracias por tu apoyo! ✂️')">✂️ Increíble</button>
+                    </div>
+                </div>
+                <div class="trabajo-post">
+                    <img src="corte10.jpg" alt="Estilo de corte 10">
+                    <div class="post-actions">
+                        <button class="btn-react" onclick="alert('¡Gracias por tu reacción! 🔥')">🔥 Me gusta</button>
+                        <button class="btn-react" onclick="alert('¡Gracias por tu apoyo! ✂️')">✂️ Increíble</button>
+                    </div>
+                </div>
+                <div class="trabajo-post">
+                    <img src="corte11.jpg" alt="Estilo de corte 11">
+                    <div class="post-actions">
+                        <button class="btn-react" onclick="alert('¡Gracias por tu reacción! 🔥')">🔥 Me gusta</button>
+                        <button class="btn-react" onclick="alert('¡Gracias por tu apoyo! ✂️')">✂️ Increíble</button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <section id="precios" class="section-card tab-content">
-                <h2>Lista de Precios y Servicios</h2>
-                <ul class="lista-precios">
-                    <li><span>Cortes de estilo</span> <span>$500</span></li>
-                    <li><span>Corte de estilo para niños</span> <span>$400</span></li>
-                    <li><span>Corte clásico (sin el 0)</span> <span>$350</span></li>
-                    <li><span>Un número parejo con los cortes</span> <span>$150</span></li>
-                    <li><span>Rasurado al cero todo el cráneo</span> <span>$100</span></li>
-                    <li><span>Arreglo de barba</span> <span>$100</span></li>
-                    <li><span>Bigote y barbilla</span> <span>$100</span></li>
-                    <li><span>Rasurado del vello facial y afeitado</span> <span>$150</span></li>
-                    <li><span>Diseños pequeños</span> <span>$50</span></li>
-                    <li><span>Diseños grandes</span> <span>$100</span></li>
-                    <li class="nota">El arreglo de cejas va incluido en el costo del pelado. Si solo desea arreglarse las cejas: $50</li>
-                    <li class="nota">Turno reservado (reservar con antelación. En caso de no poder asistir, avisar para ceder el turno): $50. <strong>«Solo 5 turnos por día»</strong></li>
-                    <li class="nota">Servicio a domicilio dentro de la ciudad: $800 (fuera de la ciudad el precio varía +)</li>
-                </ul>
-            </section>
+        <section id="precios" class="section-card tab-content">
+            <h2>Lista de Precios y Servicios</h2>
+            <ul class="lista-precios">
+                <li><span>Cortes de estilo</span> <span>$500</span></li>
+                <li><span>Corte de estilo para niños</span> <span>$400</span></li>
+                <li><span>Corte clásico (sin el 0)</span> <span>$350</span></li>
+                <li><span>Un número parejo con los cortes</span> <span>$150</span></li>
+                <li><span>Rasurado al cero todo el cráneo</span> <span>$100</span></li>
+                <li><span>Arreglo de barba</span> <span>$100</span></li>
+                <li><span>Bigote y barbilla</span> <span>$100</span></li>
+                <li><span>Rasurado del vello facial y afeitado</span> <span>$150</span></li>
+                <li><span>Diseños pequeños</span> <span>$50</span></li>
+                <li><span>Diseños grandes</span> <span>$100</span></li>
+                <li class="nota">El arreglo de cejas va incluido en el costo del pelado. Si solo desea arreglarse las cejas: $50</li>
+                <li class="nota">Turno reservado (reservar con antelación. En caso de no poder asistir, avisar para ceder el turno): $50. <strong>«Solo 5 turnos por día»</strong></li>
+                <li class="nota">Servicio a domicilio dentro de la ciudad: $800 (fuera de la ciudad el precio varía +)</li>
+            </ul>
+        </section>
 
-            <section id="turnos" class="section-card tab-content">
-                <h2>Turnos Disponibles (09:00 AM - 05:00 PM)</h2>
-                <p>Selecciona tu horario preferido para reservar. Los turnos ya ocupados se mostrarán deshabilitados.</p>
-                
-                <div class="grid-turnos">
-                    <button class="turno-btn">09:00 AM</button>
-                    <button class="turno-btn ocupado" disabled>10:00 AM (Ocupado)</button>
-                    <button class="turno-btn">11:00 AM</button>
-                    <button class="turno-btn">12:00 PM</button>
-                    <button class="turno-btn">01:00 PM</button>
-                    <button class="turno-btn">02:00 PM</button>
-                    <button class="turno-btn">03:00 PM</button>
-                    <button class="turno-btn">04:00 PM</button>
-                    <button class="turno-btn">05:00 PM</button>
+        <section id="turnos" class="section-card tab-content">
+            <h2>Reserva de Turnos (09:00 AM - 05:00 PM)</h2>
+            <p>Selecciona tu horario ideal. Te redirigirá al WhatsApp de nuestro barbero asignado para validar la reserva y el espacio quedará bloqueado en la web.</p>
+            
+            <div id="contenedor-botones-turnos" class="grid-turnos">
                 </div>
 
-                <div class="ventana-turnos">
-                    <h3>Orden del Día del Barbero</h3>
-                    <ul>
-                        <li>09:00 AM - Disponible</li>
-                        <li class="line-through">10:00 AM - Reservado por Cliente</li>
-                        <li>11:00 AM - Disponible</li>
-                        <li>... hasta las 05:00 PM</li>
+            <div class="ventana-turnos">
+                <h3>Orden de Reservas del Día</h3>
+                <ul id="lista-orden-turnos">
                     </ul>
-                </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="comentarios" class="section-card tab-content">
-                <h2>Comentarios, Saludos y Menciones Especiales</h2>
-                <div class="comentarios-lista">
-                    <div class="comentario">
-                        <strong>@CarlosM:</strong> ¡El mejor degradado que me han hecho en años! Saludos a la barbería.
-                    </div>
-                    <div class="comentario mencio-especial">
-                        <strong>⭐ Mención Especial:</strong> ¡Felicidades a nuestro cliente fiel @Alejandro por su cumpleaños hoy!
-                    </div>
+        <section id="comentarios" class="section-card tab-content">
+            <h2>Menciones y Comentarios de la Comunidad</h2>
+            
+            <div id="caja-comentarios" class="comentarios-lista">
                 </div>
-                <form class="form-simulado" onsubmit="return false;">
-                    <input type="text" placeholder="Escribe un saludo, comentario o mención..." required>
-                    <button type="submit">Enviar</button>
-                </form>
-            </section>
 
-            <section id="sorteos" class="section-card tab-content">
-                <h2>Sorteos y Promociones Activas</h2>
-                <div class="promo-box">
-                    <h3>🎉 Gran Sorteo de Fin de Mes</h3>
-                    <p>¡Participa por un combo de Corte + Arreglo de barba gratis! Los ganadores se anunciarán en esta sección.</p>
-                    <span class="badge">Activo</span>
-                </div>
-                <div class="promo-box">
-                    <h3>💈 Promo de Martes</h3>
-                    <p>Corte de estilo para niños con 10% de descuento todos los martes de la mañana.</p>
-                    <span class="badge">Activo</span>
-                </div>
-            </section>
+            <form id="form-nuevo-comentario" class="form-simulado">
+                <input type="text" id="comentario-nombre" placeholder="Tu Nombre o Usuario" required>
+                <input type="text" id="comentario-texto" placeholder="Escribe tu mensaje o felicitación aquí..." required>
+                <button type="submit">Enviar Comentario</button>
+            </form>
+        </section>
 
-            <section id="logros" class="section-card tab-content">
-                <h2>Nuestros Logros</h2>
-                <div class="logros-container">
-                    <div class="logro-item">🏆 76 Clientes Satisfechos</div>
-                    <div class="logro-item">🏅 Primer Lugar en la Experiencia-Barber Regional</div>
-                    <div class="logro-item">⭐ Calificación de 5 estrellas en redes</div>
-                </div>
-            </section>
+        <section id="sorteos" class="section-card tab-content">
+            <h2>Sorteos y Promociones Agotado</h2>
+            <div class="promo-box">
+                <h3>🎉 Gran Sorteo de Fin de Mes</h3>
+                <p>¡Participa por un combo de Corte + Arreglo de barba gratis! Los ganadores se publicarán en este muro.</p>
+                <span class="badge">Agotado</span>
+            </div>
+            <div class="promo-box">
+                <h3>💈 Promo de Martes</h3>
+                <p>Corte de estilo para niños con 10% de descuento todos los martes por la mañana.</p>
+                <span class="badge">Agotado</span>
+            </div>
+        </section>
 
-            <section id="usuarios" class="section-card tab-content">
-                <h2>Base de Datos de Usuarios Registrados</h2>
-                <p>Listado en tiempo real de los clientes que han creado una cuenta en esta plataforma.</p>
-                
-                <div class="tabla-contenedor">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Teléfono</th>
-                                <th>Correo Electrónico</th>
-                                <th>Estado</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabla-usuarios-body">
-                            <tr>
-                                <td>+53 59651766</td>
-                                <td>admin@barberia.com</td>
-                                <td><span class="user-badge admin">Admin</span></td>
-                            </tr>
+        <section id="logros" class="section-card tab-content">
+            <h2>Nuestros Logros del Equipo</h2>
+            <div class="logros-container">
+                <div class="logro-item">🏆 +76 Clientes Satisfechos</div>
+                <div class="logro-item">🏅 Primer Lugar en la Experiencia-Barber Regional</div>
+                <div class="logro-item">⭐ Calificación Perfecta de 5 Estrellas</div>
+            </div>
+        </section>
+
+        <section id="usuarios" class="section-card tab-content">
+            <h2>Base de Datos Interna de Clientes</h2>
+            <p>Agrega manualmente nuevos clientes o revisa quiénes están registrados internamente en el negocio.</p>
+            
+            <form id="usuario-manual-form" class="form-simulado">
+                <input type="tel" id="user-telefono" placeholder="Número de Teléfono (+53)" required>
+                <input type="email" id="user-correo" placeholder="Correo de Contacto" required>
+                <button type="submit">Agregar a la Base de Datos</button>
+            </form>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Teléfono</th>
+                            <th>Correo Electrónico</th>
+                            <th>Estado asignado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-usuarios-body">
                         </tbody>
-                    </table>
+                </table>
+            </div>
+        </section>
+
+        <section id="estadisticas" class="section-card tab-content">
+            <h2>Estadísticas de Tráfico y Engagement</h2>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <h3 id="stat-seguidores">+</h3>
+                    <p>Nuevos Seguidores</p>
                 </div>
-            </section>
-
-            <section id="estadisticas" class="section-card tab-content">
-                <h2>Estadísticas de la Página</h2>
-                <div class="stats-container">
-                    <div class="stat-box">
-                        <h3 id="stat-seguidores">+</h3>
-                        <p>Nuevos Seguidores este mes</p>
-                    </div>
-                    <div class="stat-box">
-                        <h3>+</h3>
-                        <p>Visitas Globales</p>
-                    </div>
-                    <div class="stat-box">
-                        <h3>%</h3>
-                        <p>Turnos Completados</p>
-                    </div>
+                <div class="stat-box">
+                    <h3 id="stat-visitas">+</h3>
+                    <p>Nuevas Visitas Únicas</p>
                 </div>
-            </section>
+                <div class="stat-box">
+                    <h3 id="stat-porcentaje">%</h3>
+                    <p>Porcentaje Mensual</p>
+                </div>
+            </div>
+        </section>
 
-        </main>
+    </main>
 
-        <a href="https://wa.me/5359651766" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            <span>¡Reserva por WhatsApp!</span>
-        </a>
+    <a href="https://wa.me/5359651766" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <span>¡Escríbenos Directo!</span>
+    </a>
 
-        <footer class="footer">
-            <p>"El estilo no es solo cómo te ves, es cómo te presentas al mundo. Cortamos con pasión, diseñamos con el corazón."</p>
-            <p>&copy; 2026 Barber Shop - Accesible en todo el mundo.</p>
-        </footer>
-
-    </div>
+    <footer class="footer">
+        <p>"El estilo no es solo cómo te ves, es cómo te presentas al mundo. Cortamos con pasión, diseñamos con el corazón."</p>
+        <p>&copy; 2026 Barber Shop - Control de Calidad Asegurado.</p>
+    </footer>
 
     <script>
-        const registroForm = document.getElementById('registro-form');
-        const pantallaRegistro = document.getElementById('pantalla-registro');
-        const contenidoSistema = document.getElementById('contenido-sistema');
-        const tablaUsuarios = document.getElementById('tabla-usuarios-body');
-        const btnCerrarSesion = document.getElementById('btn-cerrar-sesion');
+        // --- NÚMERO DE TU HERMANO ---
+        const numeroWhatsAppMano = "5359651766"; 
+        const horariosTurnos = ["09:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM"];
 
-        // Al cargar la página, comprueba si el usuario ya está logueado en esta sesión
-        window.addEventListener('DOMContentLoaded', () => {
-            actualizarTablaUsuarios();
-            if (sessionStorage.getItem('sesionActiva') === 'true') {
-                pantallaRegistro.style.display = 'none';
-                contenidoSistema.style.display = 'block';
-                window.location.hash = '#inicio';
+        // --- SISTEMA AUTOMÁTICO DE REINICIO DIARIO (A LAS 12:00 AM) ---
+        const hoy = new Date().toDateString();
+        const ultimaFechaGuardada = localStorage.getItem('barber_fecha_reinicio');
+
+        if (ultimaFechaGuardada !== hoy) {
+            // Si es un día diferente, borra las reservas anteriores automáticamente
+            localStorage.removeItem('barber_turnos_ocupados');
+            localStorage.setItem('barber_fecha_reinicio', hoy);
+        }
+
+        // --- MANEJO DE RESERVA DE TURNOS ---
+        function gestionarMuroTurnos() {
+            const ocupados = JSON.parse(localStorage.getItem('barber_turnos_ocupados')) || [];
+            const contenedorBotones = document.getElementById('contenedor-botones-turnos');
+            const listaOrdenada = document.getElementById('lista-orden-turnos');
+            
+            contenedorBotones.innerHTML = "";
+            listaOrdenada.innerHTML = "";
+
+            horariosTurnos.forEach(hora => {
+                const isOcupado = ocupados.includes(hora);
+                
+                // Botón
+                const btn = document.createElement('button');
+                btn.className = isOcupado ? "turno-btn ocupado" : "turno-btn";
+                btn.innerText = hora + (isOcupado ? " (Ocupado)" : "");
+                if (isOcupado) btn.disabled = true;
+                
+                if (!isOcupado) {
+                    btn.onclick = () => procesarReservaTurno(hora);
+                }
+                contenedorBotones.appendChild(btn);
+
+                // Lista de control visual abajo
+                const li = document.createElement('li');
+                if (isOcupado) {
+                    li.className = "line-through";
+                    li.innerText = `🚫 ${hora} - No disponible (Reservado)`;
+                } else {
+                    li.innerText = `🟢 ${hora} - Disponible para reservar`;
+                }
+                listaOrdenada.appendChild(li);
+            });
+        }
+
+        function procesarReservaTurno(hora) {
+            let ocupados = JSON.parse(localStorage.getItem('barber_turnos_ocupados')) || [];
+            if (!ocupados.includes(hora)) {
+                ocupados.push(hora);
+                localStorage.setItem('barber_turnos_ocupados', JSON.stringify(ocupados));
             }
-        });
+            
+            gestionarMuroTurnos(); // Actualizar interfaz al instante
 
-        // Evento al enviar el formulario de registro
-        registroForm.addEventListener('submit', (e) => {
+            // Crear enlace personalizado y abrir el chat de WhatsApp de tu hermano
+            const textoMensaje = encodeURIComponent(`¡Hola! Estuve revisando la página web y quiero reservar el turno de las ${hora} para mi próximo corte. ¡Confírmame si está todo listo!`);
+            window.open(`https://wa.me/${numeroWhatsAppMano}?text=${textoMensaje}`, '_blank');
+        }
+
+        // --- COMENTARIOS COMPARTIDOS DE LA COMUNIDAD ---
+        const formComentario = document.getElementById('form-nuevo-comentario');
+        formComentario.addEventListener('submit', (e) => {
             e.preventDefault();
+            const nombre = document.getElementById('comentario-nombre').value;
+            const texto = document.getElementById('comentario-texto').value;
 
-            const telefono = document.getElementById('reg-telefono').value;
-            const correo = document.getElementById('reg-correo').value;
-            const pass = document.getElementById('reg-pass').value;
+            let comentarios = JSON.parse(localStorage.getItem('barber_comentarios')) || [];
+            comentarios.push({ nombre, texto });
+            localStorage.setItem('barber_comentarios', JSON.stringify(comentarios));
 
-            // Obtener usuarios ya guardados en la Base de Datos Local (LocalStorage) o crear lista vacía
-            let usuariosBaseDatos = JSON.parse(localStorage.getItem('usuariosBarberia')) || [];
-
-            // Guardar el nuevo usuario en el arreglo
-            const nuevoUsuario = { telefono, correo, pass };
-            usuariosBaseDatos.push(nuevoUsuario);
-
-            // Guardar de vuelta en la base de datos local
-            localStorage.setItem('usuariosBarberia', JSON.stringify(usuariosBaseDatos));
-
-            // Activar sesión actual
-            sessionStorage.setItem('sesionActiva', 'true');
-
-            // Actualizar la tabla visualmente e ingresar a la web
-            actualizarTablaUsuarios();
-            pantallaRegistro.style.display = 'none';
-            contenidoSistema.style.display = 'block';
-            window.location.hash = '#inicio';
+            formComentario.reset();
+            cargarMuroComentarios();
         });
 
-        // Función para leer la base de datos y pintar los usuarios en la tabla
-        function actualizarTablaUsuarios() {
-            // Limpiar tabla manteniendo solo al administrador fijo
-            tablaUsuarios.innerHTML = `
+        function cargarMuroComentarios() {
+            const caja = document.getElementById('caja-comentarios');
+            // Elementos por defecto fijos de muestra
+            caja.innerHTML = `
+                <div class="comentario">
+                    <strong>@CarlosM:</strong> ¡El mejor degradado que me han hecho en años! Saludos a la barbería.
+                </div>
+                <div class="comentario mencio-especial">
+                    <strong>⭐ Mención Especial:</strong> ¡Felicidades a nuestro cliente fiel @Alejandro por su cumpleaños hoy!
+                </div>
+            `;
+            
+            // Cargar los comentarios reales guardados
+            const guardados = JSON.parse(localStorage.getItem('barber_comentarios')) || [];
+            guardados.forEach(c => {
+                const div = document.createElement('div');
+                div.className = "comentario";
+                div.innerHTML = `<strong>@${c.nombre}:</strong> ${c.texto}`;
+                caja.appendChild(div);
+            });
+        }
+
+        // --- SISTEMA DE BASE DE DATOS DE CLIENTES MANUALEAS ---
+        const formUsuario = document.getElementById('usuario-manual-form');
+        formUsuario.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const telefono = document.getElementById('user-telefono').value;
+            const correo = document.getElementById('user-correo').value;
+
+            let lista = JSON.parse(localStorage.getItem('barber_usuarios')) || [];
+            lista.push({ telefono, correo });
+            localStorage.setItem('barber_usuarios', JSON.stringify(lista));
+
+            formUsuario.reset();
+            cargarTablaUsuarios();
+            actualizarIndicadoresEstadisticos();
+        });
+
+        function cargarTablaUsuarios() {
+            const tbody = document.getElementById('tabla-usuarios-body');
+            tbody.innerHTML = `
                 <tr>
                     <td>+53 59651766</td>
                     <td>admin@barberia.com</td>
-                    <td><span class="user-badge admin">Admin</span></td>
+                    <td><span class="user-badge admin">Admin Principal</span></td>
                 </tr>
             `;
-
-            const usuariosBaseDatos = JSON.parse(localStorage.getItem('usuariosBarberia')) || [];
-            
-            // Agregar cada usuario guardado a la tabla
-            usuariosBaseDatos.forEach(user => {
-                const fila = document.createElement('tr');
-                fila.innerHTML = `
-                    <td>${user.telefono}</td>
-                    <td>${user.correo}</td>
-                    <td><span class="user-badge">Cliente</span></td>
-                `;
-                tablaUsuarios.appendChild(fila);
+            const lista = JSON.parse(localStorage.getItem('barber_usuarios')) || [];
+            lista.forEach(u => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td>${u.telefono}</td><td>${u.correo}</td><td><span class="user-badge">Cliente Activo</span></td>`;
+                tbody.appendChild(tr);
             });
-
-            // Modificar dinámicamente la estadística de seguidores según los registros reales
-            document.getElementById('stat-seguidores').innerText = `+${150 + usuariosBaseDatos.length}`;
         }
 
-        // Función para cerrar sesión y volver a bloquear la web
-        btnCerrarSesion.addEventListener('click', () => {
-            sessionStorage.removeItem('sesionActiva');
-            window.location.hash = '';
-            location.reload(); // Recarga la página para restaurar el bloqueo
-        });
+        // --- ESTADÍSTICAS REALES AL ENTRAR POR PRIMERA VEZ ---
+        function actualizarIndicadoresEstadisticos() {
+            // Verificar si es una sesión de pestaña nueva única
+            if (!sessionStorage.getItem('barber_visita_procesada')) {
+                let visitasTotales = parseInt(localStorage.getItem('barber_visitas_unicas')) || 0;
+                visitasTotales++;
+                localStorage.setItem('barber_visitas_unicas', visitasTotales);
+                sessionStorage.setItem('barber_visita_procesada', 'true');
+            }
+
+            const visitasReales = parseInt(localStorage.getItem('barber_visitas_unicas')) || 1;
+            const extrasPorClientes = (JSON.parse(localStorage.getItem('barber_usuarios')) || []).length;
+
+            // Renderizar datos dinámicos combinados
+            document.getElementById('stat-visitas').innerText = visitasReales;
+            document.getElementById('stat-seguidores').innerText = 150 + visitasReales + extrasPorClientes;
+            
+            // Cálculo proporcional simulado pero reactivo del porcentaje de retención mensual
+            let basePorcentaje = 95 + (extrasPorClientes * 0.5);
+            if(basePorcentaje > 100) basePorcentaje = 100;
+            document.getElementById('stat-porcentaje').innerText = basePorcentaje.toFixed(0) + "%";
+        }
+
+        // Inicialización automatizada global al cargar los ficheros
+        window.onload = () => {
+            gestionarMuroTurnos();
+            cargarMuroComentarios();
+            cargarTablaUsuarios();
+            actualizarIndicadoresEstadisticos();
+            
+            // Forzar enrutamiento interno controlado a la pestaña de inicio por defecto
+            if(!window.location.hash) window.location.hash = '#inicio';
+        };
     </script>
 </body>
 </html>
