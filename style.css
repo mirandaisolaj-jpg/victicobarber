@@ -14,15 +14,49 @@ body {
     background-position: center;
     color: #f5f5f5;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* --- LÓGICA DE NAVEGACIÓN POR SEPARADO (SOLO CSS) --- */
-/* Por defecto ocultamos todas las secciones de contenido */
+/* --- CONTROL DE ACCESO MEDIANTE CSS PURO (:target) --- */
+
+/* Por defecto, todo el contenido real de la web está completamente oculto */
+.contenido-web {
+    display: none;
+}
+
+/* Por defecto, la pantalla de registro ocupa el 100% de la pantalla bloqueando el fondo */
+.auth-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.95)), url('corte1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Cuando el usuario presiona "Registrarse" cambia la URL interna a cualquier sección (#inicio, #trabajos, etc) */
+/* Si la URL tiene un objetivo activo válido, ocultamos la pantalla de bloqueo y mostramos la web */
+body:has(:target) .auth-overlay {
+    display: none !important;
+}
+
+body:has(:target) .contenido-web {
+    display: block;
+}
+
+/* --- LÓGICA DE NAVEGACIÓN INTERNA POR SEPARADO --- */
 .tab-content {
     display: none;
 }
 
-/* Cuando una sección específica es llamada por el menú (:target), la hacemos visible */
+/* Muestra únicamente la tarjeta que corresponda al botón seleccionado */
+#inicio:target,
 #trabajos:target,
 #precios:target,
 #turnos:target,
@@ -32,10 +66,10 @@ body {
 #usuarios:target,
 #estadisticas:target {
     display: block;
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 0.4s ease-in-out;
 }
 
-/* Si se selecciona cualquier sección del menú, ocultamos el mensaje de bienvenida inicial */
+/* Oculta la bienvenida inicial cuando ya se entra a ver apartados específicos */
 body:has(#trabajos:target) .inicio-welcome,
 body:has(#precios:target) .inicio-welcome,
 body:has(#turnos:target) .inicio-welcome,
@@ -47,13 +81,96 @@ body:has(#estadisticas:target) .inicio-welcome {
     display: none;
 }
 
-/* Animación suave para cuando aparece cada sección */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- Menú e Encabezado Fijo --- */
+/* --- DISEÑO DE LA TARJETA DE REGISTRO --- */
+.auth-card {
+    background: #1a1a1a;
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+    text-align: center;
+}
+
+.auth-logo {
+    font-size: 28px;
+    color: #d4af37;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.auth-card h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.auth-card p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    color: #d4af37;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    background: #252525;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #d4af37;
+}
+
+.btn-acceder {
+    display: block;
+    background: #d4af37;
+    color: #121212;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px;
+    border-radius: 5px;
+    margin-top: 25px;
+    transition: background 0.3s;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.btn-acceder:hover {
+    background: #fff;
+}
+
+.auth-nota {
+    margin-top: 20px !important;
+    font-size: 11px !important;
+    font-style: italic;
+}
+
+/* --- MENÚ Y ENCABEZADO --- */
 .header {
     background-color: rgba(26, 26, 26, 0.95);
     position: fixed;
@@ -79,11 +196,11 @@ body:has(#estadisticas:target) .inicio-welcome {
 .nav a {
     color: #f5f5f5;
     text-decoration: none;
-    margin-left: 15px;
-    font-size: 14px;
+    margin-left: 10px;
+    font-size: 13px;
     font-weight: 600;
     transition: all 0.3s;
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 4px;
 }
 
@@ -92,7 +209,17 @@ body:has(#estadisticas:target) .inicio-welcome {
     background-color: #d4af37;
 }
 
-/* --- Contenedor Principal --- */
+.nav .btn-salir {
+    background: #3a1a1a;
+    border: 1px solid #c0392b;
+    color: #e74c3c;
+}
+.nav .btn-salir:hover {
+    background: #c0392b;
+    color: #fff;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
 .main-container {
     max-width: 1100px;
     margin: 120px auto 40px auto;
@@ -100,7 +227,6 @@ body:has(#estadisticas:target) .inicio-welcome {
     min-height: 60vh;
 }
 
-/* Tarjetas de Secciones Modernas */
 .section-card {
     background: rgba(34, 34, 34, 0.9);
     border: 1px solid rgba(212, 175, 55, 0.2);
@@ -118,17 +244,19 @@ body:has(#estadisticas:target) .inicio-welcome {
     padding-bottom: 10px;
 }
 
-/* Diseño de la bienvenida */
 .inicio-welcome {
     text-align: center;
     padding: 50px 20px;
+}
+.inicio-welcome p {
+    margin-bottom: 10px;
 }
 .logo-grande {
     font-size: 70px;
     margin-top: 20px;
 }
 
-/* --- Galería de Trabajos --- */
+/* --- GALERÍA DE TRABAJOS --- */
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -172,7 +300,7 @@ body:has(#estadisticas:target) .inicio-welcome {
     color: #121212;
 }
 
-/* --- Lista de Precios --- */
+/* --- LISTA DE PRECIOS --- */
 .lista-precios {
     list-style: none;
 }
@@ -196,7 +324,7 @@ body:has(#estadisticas:target) .inicio-welcome {
     border-left: 3px solid #d4af37;
 }
 
-/* --- Grid de Turnos --- */
+/* --- GRID DE TURNOS --- */
 .grid-turnos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -251,12 +379,11 @@ body:has(#estadisticas:target) .inicio-welcome {
     color: #888;
 }
 
-/* --- Formularios Simulados --- */
+/* --- FORMULARIOS SIMULADOS --- */
 .form-simulado {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 20px 0;
 }
 
 .form-simulado input {
@@ -277,7 +404,7 @@ body:has(#estadisticas:target) .inicio-welcome {
     cursor: pointer;
 }
 
-/* --- Sección Comentarios --- */
+/* --- SECCIÓN COMENTARIOS --- */
 .comentarios-lista {
     margin-bottom: 15px;
 }
@@ -295,7 +422,7 @@ body:has(#estadisticas:target) .inicio-welcome {
     background: rgba(255, 69, 0, 0.05);
 }
 
-/* --- Sorteos y Promociones --- */
+/* --- SORTEOS Y PROMOCIONES --- */
 .promo-box {
     background: #1a1a1a;
     padding: 20px;
@@ -316,7 +443,7 @@ body:has(#estadisticas:target) .inicio-welcome {
     border-radius: 3px;
 }
 
-/* --- Logros --- */
+/* --- LOGROS --- */
 .logros-container {
     display: flex;
     flex-wrap: wrap;
@@ -333,7 +460,7 @@ body:has(#estadisticas:target) .inicio-welcome {
     font-weight: 600;
 }
 
-/* --- Tabla de Usuarios --- */
+/* --- TABLA DE USUARIOS --- */
 .tabla-contenedor {
     overflow-x: auto;
     margin-top: 20px;
@@ -369,7 +496,7 @@ th {
     font-weight: bold;
 }
 
-/* --- Estadísticas --- */
+/* --- ESTADÍSTICAS --- */
 .stats-container {
     display: flex;
     justify-content: space-around;
@@ -391,7 +518,7 @@ th {
     color: #d4af37;
 }
 
-/* --- Botón Flotante de WhatsApp --- */
+/* --- BOTÓN FLOTANTE WHATSAPP --- */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -419,7 +546,7 @@ th {
     height: 25px;
 }
 
-/* --- Pie de Página --- */
+/* --- PIE DE PÁGINA --- */
 .footer {
     background: #111;
     text-align: center;
@@ -437,7 +564,7 @@ th {
     font-size: 16px;
 }
 
-/* --- Responsivo --- */
+/* --- RESPONSIVO --- */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -448,12 +575,13 @@ th {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 5px;
     }
     .nav a {
-        margin: 0;
+        margin: 2px;
+        font-size: 12px;
     }
     .main-container {
-        margin-top: 180px;
+        margin-top: 220px;
     }
 }

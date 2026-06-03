@@ -3,206 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbería Profesional</title>
+    <title>Barbería Profesional - Acceso</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="header">
-        <div class="logo">Barber Shop</div>
-        <nav class="nav">
-            <a href="#trabajos">Trabajos</a>
-            <a href="#precios">Precios</a>
-            <a href="#turnos">Turnos</a>
-            <a href="#comentarios">Comentarios</a>
-            <a href="#sorteos">Sorteos y Promos</a>
-            <a href="#logros">Logros</a>
-            <a href="#usuarios">Usuarios</a>
-            <a href="#estadisticas">Estadísticas</a>
-        </nav>
-    </header>
-
-    <main class="main-container">
-        
-        <section id="inicio" class="section-card inicio-welcome">
-            <h2>¡Bienvenido a la Web Oficial!</h2>
-            <p>Selecciona cualquiera de las opciones del menú de arriba para ver la información que necesitas por separado.</p>
-            <div class="logo-grande">💈✂️</div>
-        </section>
-
-        <section id="trabajos" class="section-card tab-content">
-            <h2>Nuestros Trabajos Diarios</h2>
-            <p>Mira los cortes del día. ¡Deja tu reacción y comentario abajo!</p>
+    <div id="pantalla-registro" class="auth-overlay">
+        <div class="auth-card">
+            <div class="auth-logo">💈 Barber Shop 💈</div>
+            <h2>Crear Cuenta / Iniciar Sesión</h2>
+            <p>Crea tu cuenta con tus datos para poder acceder a los turnos, comentarios y promociones de la web.</p>
             
-            <div class="galeria">
-                <div class="trabajo-post">
-                    <img src="corte1.jpg" alt="Corte de estilo 1">
-                    <div class="post-actions">
-                        <button class="btn-react">🔥 Me gusta</button>
-                        <button class="btn-react">✂️ Increíble</button>
-                    </div>
+            <form class="form-simulado" onsubmit="return false;">
+                <div class="input-group">
+                    <label>Número de Teléfono</label>
+                    <input type="tel" placeholder="+53 XXXXXXXX" required>
+                </div>
+                <div class="input-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" placeholder="nombre@correo.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Contraseña</label>
+                    <input type="password" placeholder="••••••••" required>
                 </div>
                 
-                <div class="trabajo-post">
-                    <img src="corte2.jpg" alt="Corte de estilo 2">
-                    <div class="post-actions">
-                        <button class="btn-react">🔥 Me gusta</button>
-                        <button class="btn-react">✂️ Increíble</button>
+                <a href="#inicio" class="btn-acceder">Registrarse y Entrar a la Web</a>
+            </form>
+            
+            <p class="auth-nota">Nota: Al hacer clic, simularás tu registro y se desbloqueará el contenido de forma segura.</p>
+        </div>
+    </div>
+
+
+    <div class="contenido-web">
+        
+        <header class="header">
+            <div class="logo">Barber Shop</div>
+            <nav class="nav">
+                <a href="#trabajos">Trabajos</a>
+                <a href="#precios">Precios</a>
+                <a href="#turnos">Turnos</a>
+                <a href="#comentarios">Comentarios</a>
+                <a href="#sorteos">Sorteos y Promos</a>
+                <a href="#logros">Logros</a>
+                <a href="#usuarios">Usuarios</a>
+                <a href="#estadisticas">Estadísticas</a>
+                <a href="#" class="btn-salir">Cerrar Sesión</a>
+            </nav>
+        </header>
+
+        <main class="main-container">
+            
+            <section id="inicio" class="section-card inicio-welcome">
+                <h2>¡Acceso Concedido!</h2>
+                <p>Tu sesión ha sido simulada correctamente. Ahora puedes experimentar toda la experiencia de nuestra plataforma.</p>
+                <p>Selecciona cualquiera de las opciones del menú de arriba para ver la información por separado.</p>
+                <div class="logo-grande">✂️💈👑</div>
+            </section>
+
+            <section id="trabajos" class="section-card tab-content">
+                <h2>Nuestros Trabajos Diarios</h2>
+                <p>Mira los cortes del día. ¡Deja tu reacción y comentario abajo!</p>
+                
+                <div class="galeria">
+                    <div class="trabajo-post">
+                        <img src="corte1.jpg" alt="Corte de estilo 1">
+                        <div class="post-actions">
+                            <button class="btn-react">🔥 Me gusta</button>
+                            <button class="btn-react">✂️ Increíble</button>
+                        </div>
+                    </div>
+                    
+                    <div class="trabajo-post">
+                        <img src="corte2.jpg" alt="Corte de estilo 2">
+                        <div class="post-actions">
+                            <button class="btn-react">🔥 Me gusta</button>
+                            <button class="btn-react">✂️ Increíble</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="precios" class="section-card tab-content">
-            <h2>Lista de Precios y Servicios</h2>
-            <ul class="lista-precios">
-                <li><span>Cortes de estilo</span> <span>$500</span></li>
-                <li><span>Corte de estilo para niños</span> <span>$400</span></li>
-                <li><span>Corte clásico (sin el 0)</span> <span>$350</span></li>
-                <li><span>Un número parejo con los cortes</span> <span>$150</span></li>
-                <li><span>Rasurado al cero todo el cráneo</span> <span>$100</span></li>
-                <li><span>Arreglo de barba</span> <span>$100</span></li>
-                <li><span>Bigote y barbilla</span> <span>$100</span></li>
-                <li><span>Rasurado del vello facial y afeitado</span> <span>$150</span></li>
-                <li><span>Diseños pequeños</span> <span>$50</span></li>
-                <li><span>Diseños grandes</span> <span>$100</span></li>
-                <li class="nota">El arreglo de cejas va incluido en el costo del pelado. Si solo desea arreglarse las cejas: $50</li>
-                <li class="nota">Turno reservado (reservar con antelación. En caso de no poder asistir, avisar para ceder el turno): $50. <strong>«Solo 5 turnos por día»</strong></li>
-                <li class="nota">Servicio a domicilio dentro de la ciudad: $800 (fuera de la ciudad el precio varía +)</li>
-            </ul>
-        </section>
-
-        <section id="turnos" class="section-card tab-content">
-            <h2>Turnos Disponibles (09:00 AM - 05:00 PM)</h2>
-            <p>Selecciona tu horario preferido para reservar. Los turnos ya ocupados se mostrarán deshabilitados.</p>
-            
-            <div class="grid-turnos">
-                <button class="turno-btn">09:00 AM</button>
-                <button class="turno-btn ocupado" disabled>10:00 AM (Ocupado)</button>
-                <button class="turno-btn">11:00 AM</button>
-                <button class="turno-btn">12:00 PM</button>
-                <button class="turno-btn">01:00 PM</button>
-                <button class="turno-btn">02:00 PM</button>
-                <button class="turno-btn">03:00 PM</button>
-                <button class="turno-btn">04:00 PM</button>
-                <button class="turno-btn">05:00 PM</button>
-            </div>
-
-            <div class="ventana-turnos">
-                <h3>Orden del Día del Barbero</h3>
-                <ul>
-                    <li>09:00 AM - Disponible</li>
-                    <li class="line-through">10:00 AM - Reservado por Cliente</li>
-                    <li>11:00 AM - Disponible</li>
-                    <li>... hasta las 05:00 PM</li>
+            <section id="precios" class="section-card tab-content">
+                <h2>Lista de Precios y Servicios</h2>
+                <ul class="lista-precios">
+                    <li><span>Cortes de estilo</span> <span>$500</span></li>
+                    <li><span>Corte de estilo para niños</span> <span>$400</span></li>
+                    <li><span>Corte clásico (sin el 0)</span> <span>$350</span></li>
+                    <li><span>Un número parejo con los cortes</span> <span>$150</span></li>
+                    <li><span>Rasurado al cero todo el cráneo</span> <span>$100</span></li>
+                    <li><span>Arreglo de barba</span> <span>$100</span></li>
+                    <li><span>Bigote y barbilla</span> <span>$100</span></li>
+                    <li><span>Rasurado del vello facial y afeitado</span> <span>$150</span></li>
+                    <li><span>Diseños pequeños</span> <span>$50</span></li>
+                    <li><span>Diseños grandes</span> <span>$100</span></li>
+                    <li class="nota">El arreglo de cejas va incluido en el costo del pelado. Si solo desea arreglarse las cejas: $50</li>
+                    <li class="nota">Turno reservado (reservar con antelación. En caso de no poder asistir, avisar para ceder el turno): $50. <strong>«Solo 5 turnos por día»</strong></li>
+                    <li class="nota">Servicio a domicilio dentro de la ciudad: $800 (fuera de la ciudad el precio varía +)</li>
                 </ul>
-            </div>
-        </section>
+            </section>
 
-        <section id="comentarios" class="section-card tab-content">
-            <h2>Comentarios, Saludos y Menciones Especiales</h2>
-            <div class="comentarios-lista">
-                <div class="comentario">
-                    <strong>@CarlosM:</strong> ¡El mejor degradado que me han hecho en años! Saludos a la barbería.
+            <section id="turnos" class="section-card tab-content">
+                <h2>Turnos Disponibles (09:00 AM - 05:00 PM)</h2>
+                <p>Selecciona tu horario preferido para reservar. Los turnos ya ocupados se mostrarán deshabilitados.</p>
+                
+                <div class="grid-turnos">
+                    <button class="turno-btn">09:00 AM</button>
+                    <button class="turno-btn ocupado" disabled>10:00 AM (Ocupado)</button>
+                    <button class="turno-btn">11:00 AM</button>
+                    <button class="turno-btn">12:00 PM</button>
+                    <button class="turno-btn">01:00 PM</button>
+                    <button class="turno-btn">02:00 PM</button>
+                    <button class="turno-btn">03:00 PM</button>
+                    <button class="turno-btn">04:00 PM</button>
+                    <button class="turno-btn">05:00 PM</button>
                 </div>
-                <div class="comentario mencio-especial">
-                    <strong>⭐ Mención Especial:</strong> ¡Felicidades a nuestro cliente fiel @Alejandro por su cumpleaños hoy!
+
+                <div class="ventana-turnos">
+                    <h3>Orden del Día del Barbero</h3>
+                    <ul>
+                        <li>09:00 AM - Disponible</li>
+                        <li class="line-through">10:00 AM - Reservado por Cliente</li>
+                        <li>11:00 AM - Disponible</li>
+                        <li>... hasta las 05:00 PM</li>
+                    </ul>
                 </div>
-            </div>
-            <form class="form-simulado" onsubmit="return false;">
-                <input type="text" placeholder="Escribe un saludo, comentario o mención..." required>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+            </section>
 
-        <section id="sorteos" class="section-card tab-content">
-            <h2>Sorteos y Promociones Activas</h2>
-            <div class="promo-box">
-                <h3>🎉 Gran Sorteo de Fin de Mes</h3>
-                <p>¡Participa por un combo de Corte + Arreglo de barba gratis! Los ganadores se anunciarán en esta sección.</p>
-                <span class="badge">Activo</span>
-            </div>
-            <div class="promo-box">
-                <h3>💈 Promo de Martes</h3>
-                <p>Corte de estilo para niños con 10% de descuento todos los martes de la mañana.</p>
-                <span class="badge">Activo</span>
-            </div>
-        </section>
-
-        <section id="logros" class="section-card tab-content">
-            <h2>Nuestros Logros</h2>
-            <div class="logros-container">
-                <div class="logro-item">🏆 +76 Clientes Satisfechos</div>
-                <div class="logro-item">🏅 Primer Lugar en la Experiencia-Barber Regional</div>
-                <div class="logro-item">⭐ Calificación de 5 estrellas en redes</div>
-            </div>
-        </section>
-
-        <section id="usuarios" class="section-card tab-content">
-            <h2>Usuarios Registrados</h2>
-            <p>Regístrate para poder interactuar en la comunidad y separar tus turnos.</p>
-            
-            <form class="form-simulado" onsubmit="return false;">
-                <input type="email" placeholder="Correo Electrónico" required>
-                <input type="tel" placeholder="Número de Teléfono" required>
-                <input type="password" placeholder="Contraseña" required>
-                <button type="submit">Registrarse</button>
-            </form>
-
-            <div class="tabla-contenedor">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Teléfono</th>
-                            <th>Correo Electrónico</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>+53 55555555</td>
-                            <td>cliente1@correo.com</td>
-                            <td><span class="user-badge">Cliente</span></td>
-                        </tr>
-                        <tr>
-                            <td>+53 59651766</td>
-                            <td>admin@barberia.com</td>
-                            <td><span class="user-badge admin">Admin</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section id="estadisticas" class="section-card tab-content">
-            <h2>Estadísticas de la Página</h2>
-            <div class="stats-container">
-                <div class="stat-box">
-                    <h3>+</h3>
-                    <p>Nuevos Seguidores este mes</p>
+            <section id="comentarios" class="section-card tab-content">
+                <h2>Comentarios, Saludos y Menciones Especiales</h2>
+                <div class="comentarios-lista">
+                    <div class="comentario">
+                        <strong>@CarlosM:</strong> ¡El mejor degradado que me han hecho en años! Saludos a la barbería.
+                    </div>
+                    <div class="comentario mencio-especial">
+                        <strong>⭐ Mención Especial:</strong> ¡Felicidades a nuestro cliente fiel @Alejandro por su cumpleaños hoy!
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <h3>+</h3>
-                    <p>Visitas Globales</p>
+                <form class="form-simulado" onsubmit="return false;">
+                    <input type="text" placeholder="Escribe un saludo, comentario o mención..." required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+
+            <section id="sorteos" class="section-card tab-content">
+                <h2>Sorteos y Promociones Activas</h2>
+                <div class="promo-box">
+                    <h3>🎉 Gran Sorteo de Fin de Mes</h3>
+                    <p>¡Participa por un combo de Corte + Arreglo de barba gratis! Los ganadores se anunciarán en esta sección.</p>
+                    <span class="badge">Activo</span>
                 </div>
-                <div class="stat-box">
-                    <h3>%</h3>
-                    <p>Turnos Completados</p>
+                <div class="promo-box">
+                    <h3>💈 Promo de Martes</h3>
+                    <p>Corte de estilo para niños con 10% de descuento todos los martes de la mañana.</p>
+                    <span class="badge">Activo</span>
                 </div>
-            </div>
-        </section>
+            </section>
 
-    </main>
+            <section id="logros" class="section-card tab-content">
+                <h2>Nuestros Logros</h2>
+                <div class="logros-container">
+                    <div class="logro-item">🏆 +76Clientes Satisfechos</div>
+                    <div class="logro-item">🏅 Primer Lugar en la Experiencia-Barber Regional</div>
+                    <div class="logro-item">⭐ Calificación de 5 estrellas en redes</div>
+                </div>
+            </section>
 
-    <a href="https://wa.me/5359651766" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-        <span>¡Reserva por WhatsApp!</span>
-    </a>
+            <section id="usuarios" class="section-card tab-content">
+                <h2>Usuarios Registrados de la Comunidad</h2>
+                <p>Aquí aparecen las personas registradas que interactúan en la web.</p>
+                
+                <div class="tabla-contenedor">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Teléfono</th>
+                                <th>Correo Electrónico</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>+53 55555555</td>
+                                <td>cliente1@correo.com</td>
+                                <td><span class="user-badge">Cliente</span></td>
+                            </tr>
+                            <tr>
+                                <td>+53 59651766</td>
+                                <td>admin@barberia.com</td>
+                                <td><span class="user-badge admin">Admin</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-    <footer class="footer">
-        <p>"El estilo no es solo cómo te ves, es cómo te presentas al mundo. Cortamos con pasión, diseñamos con el corazón."</p>
-        <p>&copy; 2026 Barber Shop - Accesible en todo el mundo.</p>
-    </footer>
+            <section id="estadisticas" class="section-card tab-content">
+                <h2>Estadísticas de la Página</h2>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <h3>+</h3>
+                        <p>Nuevos Seguidores este mes</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>+</h3>
+                        <p>Visitas Globales</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>%</h3>
+                        <p>Turnos Completados</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <a href="https://wa.me/5359651766" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            <span>¡Reserva por WhatsApp!</span>
+        </a>
+
+        <footer class="footer">
+            <p>"El estilo no es solo cómo te ves, es cómo te presentas al mundo. Cortamos con pasión, diseñamos con el corazón."</p>
+            <p>&copy; 2026 Barber Shop - Accesible en todo el mundo.</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>
