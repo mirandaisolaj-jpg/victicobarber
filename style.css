@@ -17,14 +17,11 @@ body {
     overflow-x: hidden;
 }
 
-/* --- CONTROL DE ACCESO MEDIANTE CSS PURO (:target) --- */
-
-/* Por defecto, todo el contenido real de la web está completamente oculto */
+/* --- CONTROL DE ACCESO (GESTIONADO POR DISPLAY INTERNO) --- */
 .contenido-web {
-    display: none;
+    display: none; /* Se activa mediante JavaScript al validar el registro */
 }
 
-/* Por defecto, la pantalla de registro ocupa el 100% de la pantalla bloqueando el fondo */
 .auth-overlay {
     position: fixed;
     top: 0;
@@ -38,16 +35,6 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-}
-
-/* Cuando el usuario presiona "Registrarse" cambia la URL interna a cualquier sección (#inicio, #trabajos, etc) */
-/* Si la URL tiene un objetivo activo válido, ocultamos la pantalla de bloqueo y mostramos la web */
-body:has(:target) .auth-overlay {
-    display: none !important;
-}
-
-body:has(:target) .contenido-web {
-    display: block;
 }
 
 /* --- LÓGICA DE NAVEGACIÓN INTERNA POR SEPARADO --- */
@@ -146,14 +133,15 @@ body:has(#estadisticas:target) .inicio-welcome {
 }
 
 .btn-acceder {
-    display: block;
+    width: 100%;
     background: #d4af37;
     color: #121212;
-    text-decoration: none;
+    border: none;
     font-weight: bold;
     padding: 14px;
     border-radius: 5px;
-    margin-top: 25px;
+    margin-top: 15px;
+    cursor: pointer;
     transition: background 0.3s;
     text-transform: uppercase;
     font-size: 14px;
@@ -162,12 +150,6 @@ body:has(#estadisticas:target) .inicio-welcome {
 
 .btn-acceder:hover {
     background: #fff;
-}
-
-.auth-nota {
-    margin-top: 20px !important;
-    font-size: 11px !important;
-    font-style: italic;
 }
 
 /* --- MENÚ Y ENCABEZADO --- */
@@ -193,6 +175,11 @@ body:has(#estadisticas:target) .inicio-welcome {
     letter-spacing: 2px;
 }
 
+.nav {
+    display: flex;
+    align-items: center;
+}
+
 .nav a {
     color: #f5f5f5;
     text-decoration: none;
@@ -213,6 +200,12 @@ body:has(#estadisticas:target) .inicio-welcome {
     background: #3a1a1a;
     border: 1px solid #c0392b;
     color: #e74c3c;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: background 0.3s;
 }
 .nav .btn-salir:hover {
     background: #c0392b;
@@ -247,9 +240,6 @@ body:has(#estadisticas:target) .inicio-welcome {
 .inicio-welcome {
     text-align: center;
     padding: 50px 20px;
-}
-.inicio-welcome p {
-    margin-bottom: 10px;
 }
 .logo-grande {
     font-size: 70px;
@@ -292,7 +282,6 @@ body:has(#estadisticas:target) .inicio-welcome {
     padding: 8px 15px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
 .btn-react:hover {
@@ -340,7 +329,6 @@ body:has(#estadisticas:target) .inicio-welcome {
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s;
 }
 
 .turno-btn:hover:not(.ocupado) {
@@ -370,10 +358,6 @@ body:has(#estadisticas:target) .inicio-welcome {
     margin-top: 10px;
 }
 
-.ventana-turnos li {
-    padding: 5px 0;
-}
-
 .line-through {
     text-decoration: line-through;
     color: #888;
@@ -392,16 +376,6 @@ body:has(#estadisticas:target) .inicio-welcome {
     color: #fff;
     padding: 12px;
     border-radius: 4px;
-}
-
-.form-simulado button {
-    background: #d4af37;
-    color: #121212;
-    font-weight: bold;
-    border: none;
-    padding: 12px;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
 /* --- SECCIÓN COMENTARIOS --- */
@@ -534,11 +508,6 @@ th {
     text-decoration: none;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
     z-index: 1000;
-    transition: transform 0.3s;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.05);
 }
 
 .whatsapp-float img {
@@ -579,9 +548,14 @@ th {
     }
     .nav a {
         margin: 2px;
-        font-size: 12px;
+        font-size: 11px;
+    }
+    .nav .btn-salir {
+        margin-left: 5px;
+        font-size: 11px;
+        padding: 4px 8px;
     }
     .main-container {
-        margin-top: 220px;
+        margin-top: 240px;
     }
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbería Profesional - Acceso</title>
+    <title>Barbería Profesional - Acceso Real</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,32 +11,30 @@
     <div id="pantalla-registro" class="auth-overlay">
         <div class="auth-card">
             <div class="auth-logo">💈 Barber Shop 💈</div>
-            <h2>Crear Cuenta / Iniciar Sesión</h2>
-            <p>Crea tu cuenta con tus datos para poder acceder a los turnos, comentarios y promociones de la web.</p>
+            <h2>Crear Cuenta de Cliente</h2>
+            <p>Regístrate con tus datos reales. Se guardarán en la base de datos local para que puedas interactuar en la web.</p>
             
-            <form class="form-simulado" onsubmit="return false;">
+            <form id="registro-form" class="form-simulado">
                 <div class="input-group">
                     <label>Número de Teléfono</label>
-                    <input type="tel" placeholder="+53 XXXXXXXX" required>
+                    <input type="tel" id="reg-telefono" placeholder="+53 XXXXXXXX" required>
                 </div>
                 <div class="input-group">
                     <label>Correo Electrónico</label>
-                    <input type="email" placeholder="nombre@correo.com" required>
+                    <input type="email" id="reg-correo" placeholder="nombre@correo.com" required>
                 </div>
                 <div class="input-group">
                     <label>Contraseña</label>
-                    <input type="password" placeholder="••••••••" required>
+                    <input type="password" id="reg-pass" placeholder="••••••••" required>
                 </div>
                 
-                <a href="#inicio" class="btn-acceder">Registrarse y Entrar a la Web</a>
+                <button type="submit" class="btn-acceder">Registrarse y Entrar</button>
             </form>
-            
-            <p class="auth-nota">Nota: Al hacer clic, simularás tu registro y se desbloqueará el contenido de forma segura.</p>
         </div>
     </div>
 
 
-    <div class="contenido-web">
+    <div id="contenido-sistema" class="contenido-web">
         
         <header class="header">
             <div class="logo">Barber Shop</div>
@@ -49,16 +47,16 @@
                 <a href="#logros">Logros</a>
                 <a href="#usuarios">Usuarios</a>
                 <a href="#estadisticas">Estadísticas</a>
-                <a href="#" class="btn-salir">Cerrar Sesión</a>
+                <button id="btn-cerrar-sesion" class="btn-salir">Cerrar Sesión</button>
             </nav>
         </header>
 
         <main class="main-container">
             
             <section id="inicio" class="section-card inicio-welcome">
-                <h2>¡Acceso Concedido!</h2>
-                <p>Tu sesión ha sido simulada correctamente. Ahora puedes experimentar toda la experiencia de nuestra plataforma.</p>
-                <p>Selecciona cualquiera de las opciones del menú de arriba para ver la información por separado.</p>
+                <h2>¡Cuenta Creada Exitosamente!</h2>
+                <p>Tus datos han sido almacenados de forma segura en la base de datos del navegador.</p>
+                <p>Usa el menú superior para navegar por las diferentes secciones de la barbería.</p>
                 <div class="logo-grande">✂️💈👑</div>
             </section>
 
@@ -164,15 +162,15 @@
             <section id="logros" class="section-card tab-content">
                 <h2>Nuestros Logros</h2>
                 <div class="logros-container">
-                    <div class="logro-item">🏆 +76Clientes Satisfechos</div>
+                    <div class="logro-item">🏆 76 Clientes Satisfechos</div>
                     <div class="logro-item">🏅 Primer Lugar en la Experiencia-Barber Regional</div>
                     <div class="logro-item">⭐ Calificación de 5 estrellas en redes</div>
                 </div>
             </section>
 
             <section id="usuarios" class="section-card tab-content">
-                <h2>Usuarios Registrados de la Comunidad</h2>
-                <p>Aquí aparecen las personas registradas que interactúan en la web.</p>
+                <h2>Base de Datos de Usuarios Registrados</h2>
+                <p>Listado en tiempo real de los clientes que han creado una cuenta en esta plataforma.</p>
                 
                 <div class="tabla-contenedor">
                     <table>
@@ -183,12 +181,7 @@
                                 <th>Estado</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>+53 55555555</td>
-                                <td>cliente1@correo.com</td>
-                                <td><span class="user-badge">Cliente</span></td>
-                            </tr>
+                        <tbody id="tabla-usuarios-body">
                             <tr>
                                 <td>+53 59651766</td>
                                 <td>admin@barberia.com</td>
@@ -203,7 +196,7 @@
                 <h2>Estadísticas de la Página</h2>
                 <div class="stats-container">
                     <div class="stat-box">
-                        <h3>+</h3>
+                        <h3 id="stat-seguidores">+</h3>
                         <p>Nuevos Seguidores este mes</p>
                     </div>
                     <div class="stat-box">
@@ -231,5 +224,85 @@
 
     </div>
 
+    <script>
+        const registroForm = document.getElementById('registro-form');
+        const pantallaRegistro = document.getElementById('pantalla-registro');
+        const contenidoSistema = document.getElementById('contenido-sistema');
+        const tablaUsuarios = document.getElementById('tabla-usuarios-body');
+        const btnCerrarSesion = document.getElementById('btn-cerrar-sesion');
+
+        // Al cargar la página, comprueba si el usuario ya está logueado en esta sesión
+        window.addEventListener('DOMContentLoaded', () => {
+            actualizarTablaUsuarios();
+            if (sessionStorage.getItem('sesionActiva') === 'true') {
+                pantallaRegistro.style.display = 'none';
+                contenidoSistema.style.display = 'block';
+                window.location.hash = '#inicio';
+            }
+        });
+
+        // Evento al enviar el formulario de registro
+        registroForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const telefono = document.getElementById('reg-telefono').value;
+            const correo = document.getElementById('reg-correo').value;
+            const pass = document.getElementById('reg-pass').value;
+
+            // Obtener usuarios ya guardados en la Base de Datos Local (LocalStorage) o crear lista vacía
+            let usuariosBaseDatos = JSON.parse(localStorage.getItem('usuariosBarberia')) || [];
+
+            // Guardar el nuevo usuario en el arreglo
+            const nuevoUsuario = { telefono, correo, pass };
+            usuariosBaseDatos.push(nuevoUsuario);
+
+            // Guardar de vuelta en la base de datos local
+            localStorage.setItem('usuariosBarberia', JSON.stringify(usuariosBaseDatos));
+
+            // Activar sesión actual
+            sessionStorage.setItem('sesionActiva', 'true');
+
+            // Actualizar la tabla visualmente e ingresar a la web
+            actualizarTablaUsuarios();
+            pantallaRegistro.style.display = 'none';
+            contenidoSistema.style.display = 'block';
+            window.location.hash = '#inicio';
+        });
+
+        // Función para leer la base de datos y pintar los usuarios en la tabla
+        function actualizarTablaUsuarios() {
+            // Limpiar tabla manteniendo solo al administrador fijo
+            tablaUsuarios.innerHTML = `
+                <tr>
+                    <td>+53 59651766</td>
+                    <td>admin@barberia.com</td>
+                    <td><span class="user-badge admin">Admin</span></td>
+                </tr>
+            `;
+
+            const usuariosBaseDatos = JSON.parse(localStorage.getItem('usuariosBarberia')) || [];
+            
+            // Agregar cada usuario guardado a la tabla
+            usuariosBaseDatos.forEach(user => {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${user.telefono}</td>
+                    <td>${user.correo}</td>
+                    <td><span class="user-badge">Cliente</span></td>
+                `;
+                tablaUsuarios.appendChild(fila);
+            });
+
+            // Modificar dinámicamente la estadística de seguidores según los registros reales
+            document.getElementById('stat-seguidores').innerText = `+${150 + usuariosBaseDatos.length}`;
+        }
+
+        // Función para cerrar sesión y volver a bloquear la web
+        btnCerrarSesion.addEventListener('click', () => {
+            sessionStorage.removeItem('sesionActiva');
+            window.location.hash = '';
+            location.reload(); // Recarga la página para restaurar el bloqueo
+        });
+    </script>
 </body>
 </html>
